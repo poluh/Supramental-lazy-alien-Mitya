@@ -8,11 +8,11 @@ import ru.spbstu.competition.protocol.Protocol
 import ru.spbstu.competition.protocol.data.*
 
 object Arguments {
-    @Option("-u", "Specify server url")
-    var url: String = ""
+    @Option(name = "-u", aliases = arrayOf("Specify server url"))
+    var url: String = "91.151.191.57"
 
-    @Option("-p", "Specify server port")
-    var port: Int = -1
+    @Option(name = "-p", aliases = arrayOf("Specify server port"))
+    var port: Int = 50006
 
     fun use(args: Array<String>): Arguments =
             CmdLineParser(this).parseArgument(*args).let{ this }
